@@ -1,10 +1,11 @@
 import streamlit as st
+import math
 
 def calculate_tokens(input_type, input_value):
     if input_type == "Words":
-        tokens = round(input_value * 100 / 75)
+        tokens = math.ceil(input_value * 100 / 75)
     else:  # input_type == "Characters"
-        tokens = input_value // 4
+        tokens = math.ceil(input_value / 4)
     return tokens
 
 def main():
@@ -19,7 +20,7 @@ def main():
     
     if st.button("Calculate"):
         tokens = calculate_tokens(input_type, input_value)
-        st.success(f"The estimated number of tokens is: {tokens}")
+        st.success(f"The estimated number of tokens (rounded up) is: {tokens}")
 
 if __name__ == "__main__":
     main()
