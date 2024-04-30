@@ -20,7 +20,7 @@ def main():
     
     if st.button("Calculate"):
         tokens = calculate_tokens(input_type, input_value)
-        st.success(f"The estimated number of tokens (rounded up) is: {tokens}")
+        st.success(f"The estimated number of tokens is: {tokens}")
 
 if __name__ == "__main__":
     main()
