@@ -3,7 +3,7 @@ import math
 
 def calculate_tokens(input_type, input_value):
     if input_type == "Words":
-        tokens = math.ceil((input_value / 6.5) * 4)
+        tokens = math.ceil(input_value * 6.5 * 4)
     else:  # input_type == "Characters"
         tokens = math.ceil(input_value * 4)
     return tokens
